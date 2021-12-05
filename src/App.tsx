@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 
 import { Header } from './components/Header';
 import { ListFilms } from './components/ListFilms';
+import { ModalNewFilm } from './components/ModalNewFilm';
 import { GlobalStyle } from './styles/global';
 
 Modal.setAppElement('#root');
@@ -16,9 +17,7 @@ export function App() {
       <Header onOpenModalNewFilm={() => setIsNewFilmModal(true)} />
       <ListFilms />
 
-      <Modal isOpen={isNewFilmModal} onRequestClose={() => setIsNewFilmModal(false)}>
-        <h2> Avalie um Filme</h2>
-      </Modal>
+      <ModalNewFilm isHandleClose={() => setIsNewFilmModal(false)} isOpen={isNewFilmModal} />
       <GlobalStyle />
     </>
   );
