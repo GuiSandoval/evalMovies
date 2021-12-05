@@ -1,11 +1,18 @@
 import { Container, ContentHeader } from './styles'
 
-export function Header() {
+interface IProps {
+    onOpenModalNewFilm: () => void;
+}
+
+export function Header({ onOpenModalNewFilm }: IProps) {
+
     return (
         <Container>
             <ContentHeader>
                 <h1>EvalMovies</h1>
-                <button type="button">Adicionar Novo Filme</button>
+                <button type="button" onClick={onOpenModalNewFilm}>Adicionar Novo Filme</button>
+
+
             </ContentHeader>
         </Container>
     )
