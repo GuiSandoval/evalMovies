@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
     background: #2C394B;
+    padding: .4rem 0;
     `;
 
 export const ContentHeader = styled.div`
@@ -23,7 +24,8 @@ export const ContentHeader = styled.div`
         margin: 0;
         border: 0;
         background: linear-gradient(to bottom, #FF4C29,#bd2f14);
-        color: #1c0703;
+        color: #1E1917;
+        font-weight: 500;
         height: 2rem;
         padding: .4rem;
         text-transform: uppercase;
