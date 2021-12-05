@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { apiOMDB } from "../../services/api"
+import { FilmPreview } from "../FilmPreview"
 import { Container } from "./styles"
 
 interface IFilms {
@@ -14,31 +15,35 @@ export const ListFilms = () => {
 
     const [isLoading, setIsLoading] = useState(true)
     const [films, setFilms] = useState<IFilms[]>([])
-    
-    function getFilms(){
-        apiOMDB.get("",{params: {
-            s:'star wars',
-        }}).then(response => {
+
+    function getFilms() {
+        apiOMDB.get("", {
+            params: {
+                s: 'star wars',
+            }
+        }).then(response => {
             setFilms(response.data.Search)
             setIsLoading(false)
         })
     }
-    
+
     useEffect(() => {
         getFilms()
     }, [])
-    
-    
+
+
     return (
         <Container>
-            <h1>Olá Mundo</h1>
-            {!isLoading && films.map(film =>{
+            {!isLoading && films.map(film => {
                 return (
-                    <div key={film.imdbID}>
-                        <img src={film.Poster} alt={film.Title}/>
-                        <h3>{film.Title}</h3>
-                        <p>{film.Year}</p>
-                    </div>
+                    <FilmPreview
+                        key={film.imdbID}
+                        poster={film.Poster}
+                        title={film.Title}
+                        type={film.Type}
+                        year={film.Year}
+                        imdbID={film.imdbID} />
+
                 )
             })}
         </Container>
