@@ -1,5 +1,5 @@
-import { Container, ContentHeader } from './styles'
 import {Link} from 'react-router-dom'
+import { Container, ContentHeader, AreaRoutes } from './styles'
 
 interface IProps {
     onOpenModalNewFilm: () => void;
@@ -11,10 +11,10 @@ export function Header({ onOpenModalNewFilm }: IProps) {
         <Container>
             <ContentHeader>
                 <h1>EvalMovies</h1>
-                <div>
+                <AreaRoutes>
                     <Link to="/">Home</Link>
                     <Link to="/lista-filmes">Filmes</Link>
-                </div>
+                </AreaRoutes>
                 <button type="button" onClick={onOpenModalNewFilm}>Adicionar Novo Filme</button>
 
 

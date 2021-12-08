@@ -38,3 +38,18 @@ export const ContentHeader = styled.div`
         
     }
 `;
+
+export const AreaRoutes = styled.nav`
+a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--primary-color);
+    }
+    
+}
+a + a {
+    margin-left: 10px;
+}
+`
