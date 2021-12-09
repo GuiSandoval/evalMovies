@@ -46,6 +46,23 @@ button {
     cursor: not-allowed;
 }
 
+.react-modal-overlay{
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.react-modal-content{
+width: 100%;
+max-width: 600px;
+background: #082032;
+padding: 3rem;
+position: relative;
+border-radius: 4px;
+}
+
 
 `;
 

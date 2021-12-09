@@ -20,6 +20,15 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
     const [evaluation, setEvaluation] = useState('')
     const [descriptionEvaluation, setDescriptionEvaluation] = useState('')
 
+    function resetStates() {
+        setTitle('')
+        setDescription('')
+        setAuthor('')
+        setYear('')
+        setEvaluation('')
+        setDescriptionEvaluation('')
+    }
+    
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -33,11 +42,13 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
             evaluationDescription: descriptionEvaluation
         }
 
-        api.post('/films', dataPost)
+        api.post('/films', dataPost).finally(()=>{
+            resetStates()
+        })
     }
-   
+
     useEffect(() => {
-        if(filmContext){
+        if (filmContext) {
             setTitle(filmContext.title)
             setDescription(filmContext.description)
             setAuthor(filmContext.author)
@@ -45,17 +56,28 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
         }
     }, [filmContext])
 
+    useEffect(() => {
+        if(!isOpen){
+            resetStates()
+        }
+    },[isOpen])
+
     return (
-        <Modal isOpen={isOpen} onRequestClose={isHandleClose}>
+        <Modal
+            isOpen={isOpen}
+            onRequestClose={isHandleClose}
+            overlayClassName="react-modal-overlay"
+            className="react-modal-content"
+        >
             <Container onSubmit={handleSubmit}>
-                <h2> Avalie um Filme</h2>
+                <h2> Avaliar Filme</h2>
 
                 <input type="text" value={title} onChange={event => setTitle(event.target.value)} placeholder="Titulo do filme" />
                 <input type="text" value={description} onChange={event => setDescription(event.target.value)} placeholder="Descriçao do filme" />
                 <input type="text" value={author} onChange={event => setAuthor(event.target.value)} placeholder="Autor" />
                 <input type="text" value={year} onChange={event => setYear(event.target.value)} placeholder="Ano do filme" />
                 <input type="text" value={evaluation} onChange={event => setEvaluation(event.target.value)} placeholder="Nota do filme" />
-                <input type="text" value={descriptionEvaluation} onChange={event => setDescriptionEvaluation(event.target.value)} placeholder="Avaliação do filme" />
+                <textarea value={descriptionEvaluation} onChange={event => setDescriptionEvaluation(event.target.value)} placeholder="Avaliação do filme" />
 
 
 
