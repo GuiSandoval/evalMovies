@@ -21,6 +21,7 @@ export function ListFilmsAPI() {
                     name={singleFilm.name}
                     evaluation={singleFilm.evaluation}
                     id={singleFilm.id}
+                    director={singleFilm.director}
                     evaluationDescription={singleFilm.evaluationDescription}
                     year={singleFilm.year}
                 />
