@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { ModalContext } from '../../ModalContext'
 import { api } from '../../services/api'
+import { RatingStars } from '../RatingStars'
 import { Container } from './styles'
 
 interface IProps {
@@ -17,7 +18,7 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
     const [description, setDescription] = useState('')
     const [author, setAuthor] = useState('')
     const [year, setYear] = useState('')
-    const [evaluation, setEvaluation] = useState('')
+    const [evaluation, setEvaluation] = useState(0)
     const [descriptionEvaluation, setDescriptionEvaluation] = useState('')
 
     function resetStates() {
@@ -25,8 +26,12 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
         setDescription('')
         setAuthor('')
         setYear('')
-        setEvaluation('')
+        setEvaluation(0)
         setDescriptionEvaluation('')
+    }
+
+    function updateStars(value: number) {
+        setEvaluation(value)
     }
     
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -76,7 +81,8 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
                 <input type="text" value={description} onChange={event => setDescription(event.target.value)} placeholder="Descriçao do filme" />
                 <input type="text" value={author} onChange={event => setAuthor(event.target.value)} placeholder="Autor" />
                 <input type="text" value={year} onChange={event => setYear(event.target.value)} placeholder="Ano do filme" />
-                <input type="text" value={evaluation} onChange={event => setEvaluation(event.target.value)} placeholder="Nota do filme" />
+                {/* <input type="text" value={evaluation} onChange={event => setEvaluation(event.target.value)} placeholder="Nota do filme" /> */}
+                <RatingStars onStarUpdate={updateStars} />
                 <textarea value={descriptionEvaluation} onChange={event => setDescriptionEvaluation(event.target.value)} placeholder="Avaliação do filme" />
 
 
