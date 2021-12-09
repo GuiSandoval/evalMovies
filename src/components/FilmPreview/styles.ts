@@ -10,13 +10,17 @@ height: 300px;
 width: 100%;
 max-width: 200px;
 background: #2C394B;
-padding: 1rem;
 margin: 0 10px 10px 0;
 border-radius: 4px;
 cursor: pointer;
 transition: transform 0.4s, border-color 0.4s;
 border: 1px solid transparent;
 
+a{
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
 
 &:hover{
     transform: scale(1.05);
