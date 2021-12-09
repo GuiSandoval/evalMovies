@@ -13,6 +13,9 @@ export const Container = styled.div`
         width: 100%;
         margin: 0 0 1rem 0;
         padding: 1rem;
+        border-radius: 4px;
+        outline: none;
+        background: #fff;
     }
 `;
 export const AreaFilms = styled.div`
