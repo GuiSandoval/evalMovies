@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { Button } from '../Button'
 import { Container, ContentHeader, AreaRoutes } from './styles'
 
 interface IProps {
@@ -15,7 +16,7 @@ export function Header({ onOpenModalNewFilm }: IProps) {
                     <Link to="/">Home</Link>
                     <Link to="/lista-filmes">Filmes</Link>
                 </AreaRoutes>
-                <button type="button" onClick={onOpenModalNewFilm}>Adicionar Novo Filme</button>
+                <Button type="button" onClick={onOpenModalNewFilm}>Adicionar Novo Filme</Button>
 
 
             </ContentHeader>

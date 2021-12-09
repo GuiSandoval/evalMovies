@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { apiOMDB } from '../../services/api'
+import { Button } from '../Button'
 import { Container, InfoFilm } from './styles'
 
 export function DetailsFilmOMBD() {
@@ -43,6 +44,7 @@ export function DetailsFilmOMBD() {
                                 <p>{film?.Runtime}</p>
                             </div>
                             <p className="description-film">{film?.Plot}</p>
+                            <Button type="button" onClick={()=> console.log("iaofds")}>Adicionar Filme e Avaliar</Button>
                         </div>
                     </InfoFilm>
                     
