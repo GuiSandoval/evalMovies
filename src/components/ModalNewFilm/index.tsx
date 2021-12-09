@@ -12,7 +12,7 @@ interface IProps {
 
 
 export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
-    const { filmContext } = useContext(ModalContext)
+    const { filmContext,handleToggleModal } = useContext(ModalContext)
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -49,6 +49,7 @@ export const ModalNewFilm = ({ isOpen, isHandleClose }: IProps) => {
 
         api.post('/films', dataPost).finally(()=>{
             resetStates()
+            handleToggleModal()
         })
     }
 

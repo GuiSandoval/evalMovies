@@ -61,6 +61,8 @@ background: #082032;
 padding: 3rem;
 position: relative;
 border-radius: 4px;
+overflow-y: auto;
+max-height: 90vh;
 }
 
 

@@ -59,6 +59,12 @@ h3{
 .evaluation-description-film{
     color: #d3d3d3;
     margin-top: -10px;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+           line-clamp: 4; 
+   -webkit-box-orient: vertical;
 }
 
 `;
