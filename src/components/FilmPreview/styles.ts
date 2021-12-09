@@ -36,4 +36,19 @@ h3{
     color:#fff
 }
 
+.info-film{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+        
+    p{
+        color: #d3d3d3;
+
+        & +p{
+            margin-left: 10px;
+        }
+    }
+}
+
 `;
