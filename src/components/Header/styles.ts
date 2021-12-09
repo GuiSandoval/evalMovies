@@ -10,7 +10,9 @@ export const ContentHeader = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
+    width:100%;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 0 1rem ;
 
     h1 {
