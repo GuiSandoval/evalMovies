@@ -19,7 +19,6 @@ export function ListFilmsAPI() {
 
     return (
         <Container>
-            <h1>Lista de filmes</h1>
             {fixedArray.map(singleFilm =>
                 <FilmPreviewAPI
                     name={singleFilm.name}
