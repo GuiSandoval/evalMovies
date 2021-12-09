@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Header } from './components/Header';
 import { ModalNewFilm } from './components/ModalNewFilm';
 import { RoutesApp } from './routes';
-import { GlobalStyle } from './styles/global';
+import { ContentLayout, GlobalStyle } from './styles/global';
 
 Modal.setAppElement('#root');
 
@@ -17,7 +17,9 @@ export function App() {
     <>
       <BrowserRouter>
         <Header onOpenModalNewFilm={() => setIsNewFilmModal(true)} />
-        <RoutesApp />
+        <ContentLayout>
+          <RoutesApp />
+        </ContentLayout>
       </BrowserRouter>
 
       <ModalNewFilm isHandleClose={() => setIsNewFilmModal(false)} isOpen={isNewFilmModal} />

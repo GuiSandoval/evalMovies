@@ -6,9 +6,6 @@ export const Container = styled.header`
     `;
 
 export const ContentHeader = styled.div`
-    max-width: 1120px;
-    margin: 0 auto;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
