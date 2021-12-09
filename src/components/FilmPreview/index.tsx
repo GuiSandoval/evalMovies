@@ -1,13 +1,7 @@
+import { IFilmPreviewProps } from "../../interfaces/Film";
 import { Container } from "./styles";
 
-interface IFilmPreviewProps {
-    poster: string;
-    title: string;
-    type: string;
-    year: string;
-    imdbID: string;
 
-};
 
 export const FilmPreview = ({
     poster,

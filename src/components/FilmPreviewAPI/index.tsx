@@ -1,17 +1,6 @@
 import React from 'react'
+import { IFilmPreviewAPI } from '../../interfaces/Film';
 import { Container } from './styles'
-
-interface IFilmPreviewAPIProps {
-    id: string;
-    name: string;
-    director?: string;
-    year: number;
-    cast?: string;
-    gender?: string;
-    evaluation: number;
-    evaluationDescription: string;
-    createdAt?: string;
-};
 
 
 export const FilmPreviewAPI = ({
@@ -24,7 +13,7 @@ export const FilmPreviewAPI = ({
     evaluation,
     evaluationDescription,
     createdAt
-}: IFilmPreviewAPIProps) => {
+}: IFilmPreviewAPI) => {
     return (
         <Container>
             {/* <img src={poster} alt={title} /> */}
