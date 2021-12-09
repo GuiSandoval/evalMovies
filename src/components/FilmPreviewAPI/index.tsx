@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { IFilmPreviewAPI } from '../../interfaces/Film';
 import { Container } from './styles'
 
@@ -15,6 +16,7 @@ export const FilmPreviewAPI = ({
     createdAt
 }: IFilmPreviewAPI) => {
     return (
+        <Link to={`detalhes/${id}`}>
         <Container>
             {/* <img src={poster} alt={title} /> */}
             <h3>{name}</h3>
@@ -22,5 +24,6 @@ export const FilmPreviewAPI = ({
             <p>{evaluation}</p>
             <p>{evaluationDescription}</p>
         </Container>
+        </Link>
     );
 }
