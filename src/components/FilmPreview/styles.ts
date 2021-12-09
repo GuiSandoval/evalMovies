@@ -11,7 +11,7 @@ width: 100%;
 max-width: 200px;
 background: #2C394B;
 padding: 1rem;
-margin: 10px;
+margin: 0 10px 10px 0;
 border-radius: 4px;
 cursor: pointer;
 transition: transform 0.4s, border-color 0.4s;
